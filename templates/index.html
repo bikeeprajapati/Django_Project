@@ -1,0 +1,41 @@
+  
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>My First Django Page</h1> 
+        {% for n in Clist %}
+        <div>{{forloop.counter}} {{n}}</div>
+        {% endfor %}
+
+        <br>
+        <br>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+
+                
+            </tr>
+            {% for d in StudentDetails %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.age}}</td>
+
+
+            </tr>
+            {% endfor %}
+            
+            {% for n in Numbers %}
+                {{n}}
+            {% endfor %}
+
+            
+
+        </table>
+        
+    </body>
+</html>
+
