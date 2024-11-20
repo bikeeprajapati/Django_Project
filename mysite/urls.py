@@ -25,5 +25,6 @@ urlpatterns = [
     path('Hobbies/',views.Hobbies),
     path('Hobbies/<int:detailsid>',views.myDetails),
     path('',views.HomePage),
+    path('userform',views.userform),
 
 ]

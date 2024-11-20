@@ -1,41 +1,41 @@
-  
-<html>
-    <head>
-        <title>{{title}}</title>
-    </head>
-    <body>
-        <h1>My First Django Page</h1> 
-        {% for n in Clist %}
-        <div>{{forloop.counter}} {{n}}</div>
-        {% endfor %}
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Landing Page</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    
+    <section class="hero">
+        <h1>Welcome to Our Landing Page</h1>
+        <p>Your journey starts here. Discover more below.</p>
+        <button onclick="learnMore()">Learn More</button>
+    </section>
+    
+    <section id="features">
+        <h2>Features</h2>
+        <p>Explore the amazing features we offer.</p>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Learn more about who we are and what we do.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out for more information.</p>
+    </section>
 
-        <br>
-        <br>
-
-        <table border="1" cellpadding="10">
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-
-                
-            </tr>
-            {% for d in StudentDetails %}
-            <tr>
-                <td>{{d.name}}</td>
-                <td>{{d.age}}</td>
-
-
-            </tr>
-            {% endfor %}
-            
-            {% for n in Numbers %}
-                {{n}}
-            {% endfor %}
-
-            
-
-        </table>
-        
-    </body>
+    
+   
+    
+    <script src="/static/script.js"></script>
+</body>
 </html>
+{% endblock  %}
 
