@@ -30,16 +30,22 @@ def HomePage(request):
 def userform(request):
     # Initialize result as None to handle cases where the form is not submitted
     res = None
+    data={}
 
     # Check if the request method is GET and parameters are present
-    if 'value1' in request.GET and 'value2' in request.GET:
+    if 'value1' in request.POST and 'value2' in request.POST:
         try:
-            n1 = int(request.GET.get('value1'))
-            n2 = int(request.GET.get('value2'))
+            n1 = int(request.POST.get('value1'))
+            n2 = int(request.POST.get('value2'))
             res = n1 + n2
+            data={
+                'n1':n1,
+                'n2':n2,
+                'result': res
+            }
         except ValueError:
             res = "Invalid input. Please enter numbers."
 
-    return render(request, "userform.html", {"result": res})
+    return render(request, "userform.html",  data)
 
     
