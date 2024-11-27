@@ -1,5 +1,6 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
+from .forms import userForm
 
 def aboutUS(request):
     return HttpResponse("Welcome to Django Learning!")
@@ -9,6 +10,21 @@ def myskills(request):
 
 def Hobbies(request):
     return HttpResponse("Playing,Singing")
+def submitform(request):
+    if 'value1' in request.POST and 'value2' in request.POST:
+        try:
+            n1 = int(request.POST.get('value1'))
+            n2 = int(request.POST.get('value2'))
+            res = n1 + n2
+            data={
+                'n1':n1,
+                'n2':n2,
+                'result': res
+            }
+            return HttpResponse(res)
+        except ValueError:
+           pass
+    
 
 def myDetails(request,detailsid):
     return HttpResponse(detailsid)
@@ -30,7 +46,8 @@ def HomePage(request):
 def userform(request):
     # Initialize result as None to handle cases where the form is not submitted
     res = None
-    data={}
+    fn=userForm
+    data={'form':fn}
 
     # Check if the request method is GET and parameters are present
     if 'value1' in request.POST and 'value2' in request.POST:
@@ -39,10 +56,10 @@ def userform(request):
             n2 = int(request.POST.get('value2'))
             res = n1 + n2
             data={
-                'n1':n1,
-                'n2':n2,
+                'form':fn,
                 'result': res
             }
+        
         except ValueError:
             res = "Invalid input. Please enter numbers."
 
