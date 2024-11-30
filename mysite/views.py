@@ -7,6 +7,29 @@ def aboutUS(request):
 
 def myskills(request):
     return HttpResponse("I am a good developer")
+def calculator(request):
+     c=''
+     try:
+        if request.method=="POST":
+            n1=eval(request.POST.get('num1'))
+            n2=eval(request.POST.get('num2'))
+            op=request.POST.get('opr')
+            if op=="+":
+                c=n1+n2
+            elif op=="-":
+                c=n1-n2
+            elif op=="*":
+                c=n1*n2
+            else:
+                c=n1/n2
+                
+       
+            
+     except:
+         c="Invalid Operation"
+     print(c)
+    
+     return render(request,"calculator.html",{'c':c})
 
 def Hobbies(request):
     return HttpResponse("Playing,Singing")
