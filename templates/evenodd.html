@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title> Odd | Even Calculator</title>
+</head>
+<body>
+   
+    <form action="" method="post">
+        {% csrf_token %}
+        <label>Value 1</label>
+        <input type="text" name="num1"  class="form-control"/>
+        <br>
+        <br>
+        <button type="submit">Even | Odd </button>
+        <label>Output </label>
+        <br>
+        <br>
+        <input type="text" Value="{{c}}" class="form-control"/>
+
+     </form>
+</body>
+</html>

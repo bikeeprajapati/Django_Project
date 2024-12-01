@@ -2,6 +2,19 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from .forms import userForm
 
+
+def evenodd(request):
+  c=''
+  if request.method == 'POST':
+      n1=eval(request.POST.get('num1'))
+      if n1%2==0:
+          c='Even'
+      else:
+          c='Odd'
+  return render(request,"evenodd.html",{'c':c})
+
+    
+
 def aboutUS(request):
     return HttpResponse("Welcome to Django Learning!")
 
