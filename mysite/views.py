@@ -13,7 +13,22 @@ def evenodd(request):
           c='Odd'
   return render(request,"evenodd.html",{'c':c})
 
-    
+def marksheet(request):
+    if request.method=="POST":
+        s1=eval(request.POST.get('sub1'))
+        s2=eval(request.POST.get('sub2'))
+        s3=eval(request.POST.get('sub3'))
+        s4=eval(request.POST.get('sub4'))
+        s5=eval(request.POST.get('sub5'))
+        t=s1+s2+s3+s4+s5
+        p=t*100/500
+        data={
+            'total':t,
+            'per':p
+        }
+        return render(request,'marksheet.html',data)  
+
+    return render(request,'marksheet.html')  
 
 def aboutUS(request):
     return HttpResponse("Welcome to Django Learning!")
