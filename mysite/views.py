@@ -4,14 +4,18 @@ from .forms import userForm
 
 
 def evenodd(request):
-  c=''
-  if request.method == 'POST':
+    if request.POST.get('num1')=="":
+          return render(request,"evenodd.html",{'error':True})
+
+        
+    c=''
+    if request.method == 'POST':
       n1=eval(request.POST.get('num1'))
       if n1%2==0:
           c='Even'
       else:
           c='Odd'
-  return render(request,"evenodd.html",{'c':c})
+    return render(request,"evenodd.html",{'c':c})
 
 def marksheet(request):
     if request.method=="POST":

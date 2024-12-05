@@ -12,6 +12,12 @@
    
     <form action="" method="post">
         {% csrf_token %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert" >
+            Please Enter The value first:
+
+        </div>
+        {% endif %}
         <label>Value 1</label>
         <input type="text" name="num1"  class="form-control"/>
         <br>
