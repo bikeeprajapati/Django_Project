@@ -1,41 +1,42 @@
 {% extends "base.html" %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Landing Page</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
-    
-    <section class="hero">
-        <h1>Welcome to Our Landing Page</h1>
-        <p>Your journey starts here. Discover more below.</p>
-        <button onclick="learnMore()">Learn More</button>
-    </section>
-    
-    <section id="features">
-        <h2>Features</h2>
-        <p>Explore the amazing features we offer.</p>
-    </section>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Learn more about who we are and what we do.</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Reach out for more information.</p>
-    </section>
+<section class="hero">
+    <h1>Welcome to Our Landing Page</h1>
+    <p>Your journey starts here. Discover more below.</p>
+    <button onclick="learnMore()">Learn More</button>
+</section>
 
-    
-   
-    
-    <script src="/static/script.js"></script>
-</body>
-</html>
-{% endblock  %}
+<section id="features">
+    <h2>Our Features</h2>
+    <p>Explore the amazing features we offer to take your experience to the next level.</p>
+    <div class="feature-list">
+        <div class="feature-card">
+            <h3>Expert Team</h3>
+            <p>Industry experts with proven experience to guide you.</p>
+            <a href="/featurepage1">Learn More</a>
+        </div>
+        <div class="feature-card">
+            <h3>Customized Solutions</h3>
+            <p>Strategies tailored to meet your unique needs.</p>
+            <a href="/featurepage2">Learn More</a>
+        </div>
+        <div class="feature-card">
+            <h3>Client-Centric Approach</h3>
+            <p>Your success is our priority, always.</p>
+            <a href="/featurepage3">Learn More</a>
+        </div>
+    </div>
+</section>
 
+<section id="about">
+    <h2>About Us</h2>
+    <p>Learn more about who we are and what we do.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out for more information.</p>
+</section>
+
+{% endblock %}
