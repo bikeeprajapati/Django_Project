@@ -1,6 +1,7 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from .forms import userForm
+from service.models import Features
 
 
 def evenodd(request):
@@ -85,15 +86,11 @@ def myDetails(request,detailsid):
     return HttpResponse(detailsid)
 
 def HomePage(request):
+    FeaturesData=Features.objects.all()
+    
     data={
-        'title':'Hello World',
-        'Clist':['php','python','java'],
-        'Numbers':[13,56,84,67],
-        'StudentDetails': [
-        {'name':'Rahul','age':20},
-        {'name':'Mohan','age':23},
         
-     ]
+            'FeaturesData':FeaturesData
         
     }
         
