@@ -86,7 +86,7 @@ def myDetails(request,detailsid):
     return HttpResponse(detailsid)
 
 def HomePage(request):
-    FeaturesData=Features.objects.all()
+    FeaturesData=Features.objects.all().order_by('-id')
     
     data={
         
