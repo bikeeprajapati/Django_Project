@@ -12,13 +12,13 @@
     <h2>Our Features</h2>
     <p>Explore the amazing features we offer to take your experience to the next level.</p>
     <div class="feature-list">
-        {% for n in FeaturesData %}
+    {% for n in FeaturesData %}
         <div class="{{n.Features_Icon}}">
             <h3>{{n.Features_Title}}</h3>
             <p>{{n.Features_Description}}</p>
             <a href="/featurepage1">Learn More</a>
         </div>
-        {% endfor %}
+        
        
         <div class="{{n.Features_Icon}}">
             <h3>{{n.Features_Title}}</h3>
@@ -30,7 +30,7 @@
             <p>{{n.Features_Description}}</p>
             <a href="/featurepage3">Learn More</a>
         </div>
-        
+    {% endfor %}
         
     </div>
     
