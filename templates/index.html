@@ -15,21 +15,10 @@
     {% for n in FeaturesData %}
         <div class="{{n.Features_Icon}}">
             <h3>{{n.Features_Title}}</h3>
-            <p>{{n.Features_Description}}</p>
+            <p>{{n.Features_Description | safe}}</p>
             <a href="/featurepage1">Learn More</a>
         </div>
         
-       
-        <div class="{{n.Features_Icon}}">
-            <h3>{{n.Features_Title}}</h3>
-            <p>{{n.Features_Description}}</p>
-            <a href="/featurepage2">Learn More</a>
-        </div>
-        <div class="{{n.Features_Icon}}">
-            <h3>{{n.Features_Title}}</h3>
-            <p>{{n.Features_Description}}</p>
-            <a href="/featurepage3">Learn More</a>
-        </div>
     {% endfor %}
         
     </div>
