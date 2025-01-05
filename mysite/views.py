@@ -2,6 +2,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from .forms import userForm
 from service.models import Features
+from news.models import News
 
 
 def evenodd(request):
@@ -86,11 +87,13 @@ def myDetails(request,detailsid):
     return HttpResponse(detailsid)
 
 def HomePage(request):
+    newsData=News.objects.all();
     FeaturesData=Features.objects.all().order_by('-id')[:4]
     
     data={
         
-            'FeaturesData':FeaturesData
+            'FeaturesData':FeaturesData,
+            'newsData':newsData
         
     }
         

@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+<marquee>
+    {% for news in newsData%}
+      {{news.news_title}}
+    {% endfor %}
+</maequee>
 <section class="hero">
     <h1>Welcome to Our Landing Page</h1>
     <p>Your journey starts here. Discover more below.</p>
